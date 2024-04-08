@@ -9,3 +9,6 @@ C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.csproj.Gen
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.csproj.CoreCompileInputs.cache
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.exe
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.pdb
+C:\Users\Asus\source\repos\RecipeList\RecipeList\bin\Debug\MaterialSkin.dll
+C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.View.RecipesView.resources
+C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.csproj.CopyComplete

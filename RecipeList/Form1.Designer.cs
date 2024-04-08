@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.NavigationPanel = new System.Windows.Forms.Panel();
-            this.Title = new System.Windows.Forms.Label();
-            this.ListButton = new System.Windows.Forms.Label();
             this.MenuPanel = new System.Windows.Forms.Panel();
             this.OptionPanel = new System.Windows.Forms.Label();
+            this.ListButton = new System.Windows.Forms.Label();
+            this.Title = new System.Windows.Forms.Label();
             this.NavigationPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             this.SuspendLayout();
@@ -48,28 +48,6 @@
             this.NavigationPanel.Name = "NavigationPanel";
             this.NavigationPanel.Size = new System.Drawing.Size(799, 50);
             this.NavigationPanel.TabIndex = 0;
-            // 
-            // Title
-            // 
-            this.Title.AutoSize = true;
-            this.Title.Font = new System.Drawing.Font("JetBrainsMono NF", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.Title.Location = new System.Drawing.Point(21, 11);
-            this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(90, 26);
-            this.Title.TabIndex = 0;
-            this.Title.Text = "Recipe";
-            // 
-            // ListButton
-            // 
-            this.ListButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ListButton.AutoSize = true;
-            this.ListButton.Font = new System.Drawing.Font("JetBrainsMono NF", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListButton.Location = new System.Drawing.Point(26, 14);
-            this.ListButton.Name = "ListButton";
-            this.ListButton.Size = new System.Drawing.Size(40, 18);
-            this.ListButton.TabIndex = 1;
-            this.ListButton.Text = "List";
             // 
             // MenuPanel
             // 
@@ -92,6 +70,28 @@
             this.OptionPanel.Size = new System.Drawing.Size(72, 18);
             this.OptionPanel.TabIndex = 2;
             this.OptionPanel.Text = "Category";
+            // 
+            // ListButton
+            // 
+            this.ListButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ListButton.AutoSize = true;
+            this.ListButton.Font = new System.Drawing.Font("JetBrainsMono NF", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListButton.Location = new System.Drawing.Point(26, 14);
+            this.ListButton.Name = "ListButton";
+            this.ListButton.Size = new System.Drawing.Size(64, 18);
+            this.ListButton.TabIndex = 1;
+            this.ListButton.Text = "Recipes";
+            // 
+            // Title
+            // 
+            this.Title.AutoSize = true;
+            this.Title.Font = new System.Drawing.Font("JetBrainsMono NF", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.Title.Location = new System.Drawing.Point(21, 11);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(103, 26);
+            this.Title.TabIndex = 0;
+            this.Title.Text = "SANGKAP";
             // 
             // MainForm
             // 
