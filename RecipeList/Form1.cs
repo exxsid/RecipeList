@@ -15,6 +15,24 @@ namespace RecipeList
         public MainForm()
         {
             InitializeComponent();
+            
+        }
+
+        private void ListButton_Click(object sender, EventArgs e)
+        {
+            panel2.Hide();
+            panel1.Show();
+        }
+
+        private void OptionPanel_Click(object sender, EventArgs e)
+        {
+            panel1.Hide();
+            panel2.Show();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            panel2.Hide();
         }
     }
 }
