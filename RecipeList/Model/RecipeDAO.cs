@@ -47,6 +47,27 @@ namespace RecipeList.Model
             return recipes;
         }
 
+        public Recipe GetRecipeById(int id)
+        {
+            Recipe obj = new Recipe();
+
+            _conn.Open();
+            var cmd = new MySqlCommand($"SELECT * FROM recipes r JOIN categories c ON r.category_id = c.id WHERE r.id = {id};", _conn);
+            var reader = cmd.ExecuteReader();
+
+            reader.Read();
+            obj.Id = reader.GetInt32(0);
+            obj.Name = reader.GetString(1);
+            obj.Description = reader.GetString(2);
+            obj.Ingredients = ParseJson(reader.GetString(3), "ingredients");
+            obj.Procedures = ParseJson(reader.GetString(4), "procedures");
+            obj.Image = reader.IsDBNull(reader.GetOrdinal("image")) ? "" : reader.GetString(5);
+            obj.Category = reader.GetString(8);
+            _conn.Close();
+
+            return obj;
+        }
+
         private List<string> ParseJson(string json, string key)
         {
             Object[] temps = (object[])JsonParser.Parse(json)[key];

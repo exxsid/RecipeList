@@ -36,9 +36,10 @@ namespace RecipeList.View
                 card[i] = new RecipeCard();
 
                 card[i].CardTitle = recipes[i].Name;
+                
 
                 recipeFlowLayout.Controls.Add(card[i]);
-
+                card[i].GetCardTitleLabel().Tag = recipes[i].Id;
                 card[i].GetCardTitleLabel().Click += RecipeCard_Click;
             }
         }
@@ -47,7 +48,8 @@ namespace RecipeList.View
         {
             Label title = (Label)sender;
 
-            MessageBox.Show(title.Text);
+            ProcedureForm procedureForm = new ProcedureForm((int)title.Tag);
+            procedureForm.Show();
         }
 
         private void RecipesView_Load(object sender, EventArgs e)
