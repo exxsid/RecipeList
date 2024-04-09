@@ -8,21 +8,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RecipeList.Model;
 
 namespace RecipeList.View
 {
     public partial class RecipesView : UserControl
     {
+        private RecipeDAO recipeDAO;
         public RecipesView()
         {
             InitializeComponent();
+            recipeDAO = new RecipeDAO();
         }
 
         public void GenerateRecipeCard()
         {
             recipeFlowLayout.Controls.Clear();
 
-            RecipeCard[] card = new RecipeCard[4];
+            List<Recipe> recipes = recipeDAO.GetRecipes();
+
+            RecipeCard[] card = new RecipeCard[recipes.Count];
 
             string[] titles = new string[] { "Adobo", "Pakbet", "Denengdeng", "Chicken" };
 
@@ -30,7 +35,7 @@ namespace RecipeList.View
             {
                 card[i] = new RecipeCard();
 
-                card[i].CardTitle = titles[i];
+                card[i].CardTitle = recipes[i].Name;
 
                 recipeFlowLayout.Controls.Add(card[i]);
 

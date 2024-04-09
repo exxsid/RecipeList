@@ -16,18 +16,20 @@ namespace RecipeList.Model
             _conn = DbConnector.Connector();
         }
 
-        public List<string> GetCategories()
+        public List<Category> GetCategories()
         {
-            List<string> categories = new List<string>();
+            List<Category> categories = new List<Category>();
 
             _conn.Open();
-            var cmd = new MySqlCommand("SELECT name FROM categories;", _conn);
+            var cmd = new MySqlCommand("SELECT * FROM categories;", _conn);
 
             var reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                categories.Add(reader.GetString(0));
+                int id = reader.GetInt32(0);
+                string name = reader.GetString(1);
+                categories.Add(new Category(id, name));
             }
 
             _conn.Close();

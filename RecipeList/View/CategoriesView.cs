@@ -8,28 +8,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RecipeList.Model;
 
 namespace RecipeList.View
 {
     public partial class CategoriesView : UserControl
     {
+        private CategoryDAO categoryDao;
 
         public CategoriesView()
         {
             InitializeComponent();
+            categoryDao = new CategoryDAO();
         }
 
+        // generate category card inside the category view
         private void GenerateCategoryCard()
         {
+            // clear any control inside the flowlayout
             CategoriesLayoutPanel.Controls.Clear();
 
-            CategoryCard[] cards = new CategoryCard[5];
+            // get categories in the database
+            List<Category> categories = categoryDao.GetCategories();
 
-            string[] title = new string[] { "Appetizer", "First Course", "Main Course", "Dessert", "Tangina" };
+            CategoryCard[] cards = new CategoryCard[categories.Count];
+
             for(int i = 0; i < cards.Length; i++)
             {
                 cards[i] = new CategoryCard();
-                cards[i].SetTitle(title[i]);
+                cards[i].SetTitle(categories[i].Name.ToUpper());
+                cards[i].Tag = categories[i].Id;
 
                 CategoriesLayoutPanel.Controls.Add(cards[i]);
                 cards[i].Enabled = true;
@@ -37,6 +45,7 @@ namespace RecipeList.View
             }
         }
 
+        // listener for when the category card is clicked
         private void CategoryCard_Click(object sender, EventArgs e)
         {
             Label title = (Label)sender;
