@@ -37,7 +37,7 @@ namespace RecipeList.Model
                 obj.Description = reader.GetString(2);
                 obj.Ingredients = ParseJson(reader.GetString(3), "ingredients");
                 obj.Procedures = ParseJson(reader.GetString(4), "procedures");
-                obj.Image = reader.IsDBNull(reader.GetOrdinal("image")) ? "" : reader.GetString(5);
+                obj.Image = reader.IsDBNull(reader.GetOrdinal("image")) ? null: (byte[])reader["image"];
                 obj.Category = reader.GetString(8);
                 recipes.Add(obj);
             }
@@ -61,11 +61,39 @@ namespace RecipeList.Model
             obj.Description = reader.GetString(2);
             obj.Ingredients = ParseJson(reader.GetString(3), "ingredients");
             obj.Procedures = ParseJson(reader.GetString(4), "procedures");
-            obj.Image = reader.IsDBNull(reader.GetOrdinal("image")) ? "" : reader.GetString(5);
+            obj.Image = reader.IsDBNull(reader.GetOrdinal("image")) ? null : (byte[])reader["image"];
             obj.Category = reader.GetString(8);
             _conn.Close();
 
             return obj;
+        }
+
+        public List<Recipe> GetRecipeByCategory(string category)
+        {
+            List<Recipe> recipes = new List<Recipe>();
+
+            _conn.Open();
+
+            var cmd = new MySqlCommand($"SELECT * FROM recipes r JOIN categories c ON r.category_id = c.id WHERE c.name = \"{category}\";", _conn);
+            var reader = cmd.ExecuteReader();
+
+
+            while (reader.Read())
+            {
+                Recipe obj = new Recipe();
+                obj.Id = reader.GetInt32(0);
+                obj.Name = reader.GetString(1);
+                obj.Description = reader.GetString(2);
+                obj.Ingredients = ParseJson(reader.GetString(3), "ingredients");
+                obj.Procedures = ParseJson(reader.GetString(4), "procedures");
+                obj.Image = reader.IsDBNull(reader.GetOrdinal("image")) ? null : (byte[])reader["image"];
+                obj.Category = reader.GetString(8);
+                recipes.Add(obj);
+            }
+
+            _conn.Close();
+
+            return recipes; 
         }
 
         private List<string> ParseJson(string json, string key)

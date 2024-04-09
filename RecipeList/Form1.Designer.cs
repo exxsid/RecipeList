@@ -34,9 +34,9 @@
             this.ListButton = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.recipesView = new RecipeList.View.RecipesView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.categoriesView1 = new RecipeList.View.CategoriesView();
-            this.recipesView = new RecipeList.View.RecipesView();
             this.NavigationPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -111,6 +111,19 @@
             this.panel1.Size = new System.Drawing.Size(883, 454);
             this.panel1.TabIndex = 1;
             // 
+            // recipesView
+            // 
+            this.recipesView.AutoScroll = true;
+            this.recipesView.AutoSize = true;
+            this.recipesView.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.recipesView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(246)))), ((int)(((byte)(244)))));
+            this.recipesView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.recipesView.Location = new System.Drawing.Point(0, 0);
+            this.recipesView.Name = "recipesView";
+            this.recipesView.Padding = new System.Windows.Forms.Padding(10);
+            this.recipesView.Size = new System.Drawing.Size(883, 454);
+            this.recipesView.TabIndex = 0;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(246)))), ((int)(((byte)(244)))));
@@ -129,19 +142,6 @@
             this.categoriesView1.Size = new System.Drawing.Size(560, 350);
             this.categoriesView1.TabIndex = 0;
             // 
-            // recipesView
-            // 
-            this.recipesView.AutoScroll = true;
-            this.recipesView.AutoSize = true;
-            this.recipesView.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.recipesView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(246)))), ((int)(((byte)(244)))));
-            this.recipesView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.recipesView.Location = new System.Drawing.Point(0, 0);
-            this.recipesView.Name = "recipesView";
-            this.recipesView.Padding = new System.Windows.Forms.Padding(10);
-            this.recipesView.Size = new System.Drawing.Size(883, 454);
-            this.recipesView.TabIndex = 0;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,8 +151,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(246)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(884, 511);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.NavigationPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MinimumSize = new System.Drawing.Size(816, 489);

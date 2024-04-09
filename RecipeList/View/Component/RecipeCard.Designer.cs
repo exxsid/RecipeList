@@ -68,6 +68,7 @@
             this.cardPhoto.Location = new System.Drawing.Point(8, 5);
             this.cardPhoto.Name = "cardPhoto";
             this.cardPhoto.Size = new System.Drawing.Size(131, 167);
+            this.cardPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.cardPhoto.TabIndex = 2;
             this.cardPhoto.TabStop = false;
             // 

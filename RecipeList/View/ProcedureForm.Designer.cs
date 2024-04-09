@@ -39,7 +39,7 @@
             this.procedureView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(246)))), ((int)(((byte)(244)))));
             this.procedureView1.Location = new System.Drawing.Point(0, -1);
             this.procedureView1.Name = "procedureView1";
-            this.procedureView1.Size = new System.Drawing.Size(781, 762);
+            this.procedureView1.Size = new System.Drawing.Size(764, 762);
             this.procedureView1.TabIndex = 0;
             // 
             // ProcedureForm

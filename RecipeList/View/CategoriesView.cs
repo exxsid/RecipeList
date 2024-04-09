@@ -37,7 +37,7 @@ namespace RecipeList.View
             {
                 cards[i] = new CategoryCard();
                 cards[i].SetTitle(categories[i].Name.ToUpper());
-                cards[i].Tag = categories[i].Id;
+                cards[i].GetTitleLabel().Tag = categories[i].Id;
 
                 CategoriesLayoutPanel.Controls.Add(cards[i]);
                 cards[i].Enabled = true;
@@ -46,10 +46,12 @@ namespace RecipeList.View
         }
 
         // listener for when the category card is clicked
-        private void CategoryCard_Click(object sender, EventArgs e)
+        public void CategoryCard_Click(object sender, EventArgs e)
         {
             Label title = (Label)sender;
-            MessageBox.Show(title.Text);
+            CategoryRecipesView obj = new CategoryRecipesView(title.Text.ToLower());
+            obj.Text = $"Category: {title.Text}";
+            obj.Show();
         }
 
 

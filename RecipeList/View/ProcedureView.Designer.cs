@@ -57,13 +57,14 @@
             this.description.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.description.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.description.Enabled = false;
             this.description.Font = new System.Drawing.Font("JetBrainsMono NF", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.description.Location = new System.Drawing.Point(245, 68);
             this.description.Multiline = true;
             this.description.Name = "description";
+            this.description.ReadOnly = true;
             this.description.Size = new System.Drawing.Size(286, 86);
             this.description.TabIndex = 1;
+            this.description.TabStop = false;
             this.description.Text = "Lorem ipsum dolor et met adhadf fjadfkjadfj alkdjf fajldkfj jladfkj jfjkdjfe fjad" +
     " fajekaffjd jakdf";
             // 
@@ -105,13 +106,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ingredients.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ingredients.Enabled = false;
             this.ingredients.Font = new System.Drawing.Font("JetBrainsMono NF", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ingredients.Location = new System.Drawing.Point(28, 237);
             this.ingredients.Multiline = true;
             this.ingredients.Name = "ingredients";
+            this.ingredients.ReadOnly = true;
+            this.ingredients.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.ingredients.Size = new System.Drawing.Size(503, 154);
             this.ingredients.TabIndex = 5;
+            this.ingredients.TabStop = false;
             this.ingredients.Text = "Lorem ipsum dolor et met adhadf fjadfkjadfj alkdjf fajldkfj jladfkj jfjkdjfe fjad" +
     " fajekaffjd jakdf";
             // 
@@ -133,13 +136,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.procedures.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.procedures.Enabled = false;
             this.procedures.Font = new System.Drawing.Font("JetBrainsMono NF", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.procedures.Location = new System.Drawing.Point(28, 432);
             this.procedures.Multiline = true;
             this.procedures.Name = "procedures";
+            this.procedures.ReadOnly = true;
+            this.procedures.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.procedures.Size = new System.Drawing.Size(503, 211);
             this.procedures.TabIndex = 7;
+            this.procedures.TabStop = false;
             this.procedures.Text = "Lorem ipsum dolor et met adhadf fjadfkjadfj alkdjf fajldkfj jladfkj jfjkdjfe fjad" +
     " fajekaffjd jakdf";
             // 

@@ -1,4 +1,5 @@
-﻿using RecipeList.View.Component;
+﻿using RecipeList.Model;
+using RecipeList.View.Component;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,25 +9,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using RecipeList.Model;
-using System.IO;
 
 namespace RecipeList.View
 {
-    public partial class RecipesView : UserControl
+    public partial class CategoryRecipesView : Form
     {
         private RecipeDAO recipeDAO;
-        public RecipesView()
+        public CategoryRecipesView(string category)
         {
             InitializeComponent();
             recipeDAO = new RecipeDAO();
+            this.Category = category;
+        }
+
+        public string Category
+        {
+            get; set;
         }
 
         public void GenerateRecipeCard()
         {
-            recipeFlowLayout.Controls.Clear();
+            categoryRecipeFlowLayout.Controls.Clear();
 
-            List<Recipe> recipes = recipeDAO.GetRecipes();
+            List<Recipe> recipes = recipeDAO.GetRecipeByCategory(this.Category);
 
             RecipeCard[] card = new RecipeCard[recipes.Count];
 
@@ -36,11 +41,8 @@ namespace RecipeList.View
 
                 card[i].CardTitle = recipes[i].Name;
 
-                Image image = ByteArrayToImage(recipes[i].Image);
 
-                card[i].SetPhoto(image);
-
-                recipeFlowLayout.Controls.Add(card[i]);
+                categoryRecipeFlowLayout.Controls.Add(card[i]);
                 card[i].GetCardTitleLabel().Tag = recipes[i].Id;
                 card[i].GetCardTitleLabel().Click += RecipeCard_Click;
             }
@@ -54,16 +56,7 @@ namespace RecipeList.View
             procedureForm.Show();
         }
 
-        private Image ByteArrayToImage(byte[] byteArrayIn)
-        {
-            using (MemoryStream ms = new MemoryStream(byteArrayIn))
-            {
-                Image image = Image.FromStream(ms);
-                return image;
-            }
-        }
-
-        private void RecipesView_Load(object sender, EventArgs e)
+        private void CategoryRecipesView_Load(object sender, EventArgs e)
         {
             GenerateRecipeCard();
         }

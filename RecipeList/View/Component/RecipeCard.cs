@@ -29,16 +29,9 @@ namespace RecipeList.View.Component
             }
         }
 
-        public string CardPhotoLocation
+        public void SetPhoto(Image image)
         {
-            get
-            {
-                return cardPhoto.ImageLocation;
-            }
-            set
-            {
-                cardPhoto.ImageLocation = value;
-            }
+            this.cardPhoto.Image = image;
         }
 
         public Label GetCardTitleLabel()

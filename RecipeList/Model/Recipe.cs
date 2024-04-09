@@ -13,7 +13,7 @@ namespace RecipeList.Model
         public string Description { get; set; }
         public List<string> Ingredients { get; set; }
         public List<string> Procedures { get; set; } 
-        public string Image { get; set; }
+        public byte[] Image { get; set; }
         public string Category { get; set; }
     }
 }
