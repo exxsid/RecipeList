@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,8 @@ namespace RecipeList.View
 
                 card[i].CardTitle = recipes[i].Name;
 
+                Image image = ByteArrayToImage(recipes[i].Image);
+                card[i].SetPhoto(image);
 
                 categoryRecipeFlowLayout.Controls.Add(card[i]);
                 card[i].GetCardTitleLabel().Tag = recipes[i].Id;
@@ -59,6 +62,15 @@ namespace RecipeList.View
         private void CategoryRecipesView_Load(object sender, EventArgs e)
         {
             GenerateRecipeCard();
+        }
+
+        private Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            using (MemoryStream ms = new MemoryStream(byteArrayIn))
+            {
+                Image image = Image.FromStream(ms);
+                return image;
+            }
         }
     }
 }
