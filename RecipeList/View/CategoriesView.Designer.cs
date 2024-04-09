@@ -29,63 +29,51 @@
         private void InitializeComponent()
         {
             this.CategoriesLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.categoryCard1 = new RecipeList.View.Component.CategoryCard();
-            this.categoryCard2 = new RecipeList.View.Component.CategoryCard();
-            this.CategoriesLayoutPanel.SuspendLayout();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // CategoriesLayoutPanel
             // 
-            this.CategoriesLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CategoriesLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.CategoriesLayoutPanel.AutoSize = true;
-            this.CategoriesLayoutPanel.Controls.Add(this.categoryCard1);
-            this.CategoriesLayoutPanel.Controls.Add(this.categoryCard2);
-            this.CategoriesLayoutPanel.Location = new System.Drawing.Point(10, 10);
+            this.CategoriesLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CategoriesLayoutPanel.Location = new System.Drawing.Point(277, 3);
             this.CategoriesLayoutPanel.Name = "CategoriesLayoutPanel";
-            this.CategoriesLayoutPanel.Size = new System.Drawing.Size(536, 324);
+            this.CategoriesLayoutPanel.Size = new System.Drawing.Size(0, 338);
             this.CategoriesLayoutPanel.TabIndex = 0;
             // 
-            // categoryCard1
+            // tableLayoutPanel1
             // 
-            this.categoryCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
-            this.categoryCard1.Location = new System.Drawing.Point(5, 5);
-            this.categoryCard1.Margin = new System.Windows.Forms.Padding(5);
-            this.categoryCard1.Name = "categoryCard1";
-            this.categoryCard1.Padding = new System.Windows.Forms.Padding(8);
-            this.categoryCard1.Size = new System.Drawing.Size(130, 60);
-            this.categoryCard1.TabIndex = 0;
-            // 
-            // categoryCard2
-            // 
-            this.categoryCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
-            this.categoryCard2.Location = new System.Drawing.Point(145, 5);
-            this.categoryCard2.Margin = new System.Windows.Forms.Padding(5);
-            this.categoryCard2.Name = "categoryCard2";
-            this.categoryCard2.Padding = new System.Windows.Forms.Padding(8);
-            this.categoryCard2.Size = new System.Drawing.Size(130, 60);
-            this.categoryCard2.TabIndex = 1;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.CategoriesLayoutPanel, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(554, 344);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // CategoriesView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(246)))), ((int)(((byte)(244)))));
-            this.Controls.Add(this.CategoriesLayoutPanel);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(10);
             this.Name = "CategoriesView";
             this.Size = new System.Drawing.Size(560, 350);
-            this.CategoriesLayoutPanel.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.CategoriesView_Load);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel CategoriesLayoutPanel;
-        private Component.CategoryCard categoryCard1;
-        private Component.CategoryCard categoryCard2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RecipeList.View.Component;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,19 +21,41 @@ namespace RecipeList
 
         private void ListButton_Click(object sender, EventArgs e)
         {
-            panel2.Hide();
             panel1.Show();
+            panel2.Hide();
         }
 
-        private void OptionPanel_Click(object sender, EventArgs e)
+        private void CategoryBtn_Click(object sender, EventArgs e)
         {
-            panel1.Hide();
             panel2.Show();
+            panel1.Hide();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             panel2.Hide();
+            panel1.Show();
+        }
+
+
+        private void ListButton_MouseLeave(object sender, EventArgs e)
+        {
+            ListButton.BackColor = Color.FromArgb(196, 223, 223);
+        }
+
+        private void ListButton_MouseEnter(object sender, EventArgs e)
+        {
+            ListButton.BackColor = Color.AliceBlue;
+        }
+
+        private void panel3_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("Clicked");
+        }
+
+        private void tableLayoutPanel1_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("Clicked1");
         }
     }
 }

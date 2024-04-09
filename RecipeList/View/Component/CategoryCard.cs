@@ -16,5 +16,20 @@ namespace RecipeList.View.Component
         {
             InitializeComponent();
         }
+
+        public string GetTitle()
+        {
+            return CardTitle.Text;
+        }
+
+        public void SetTitle(string title)
+        {
+            CardTitle.Text = title;
+        }
+
+        public Label GetTitleLabel()
+        {
+            return CardTitle;
+        }
     }
 }
