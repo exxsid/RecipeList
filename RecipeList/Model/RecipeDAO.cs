@@ -267,6 +267,26 @@ namespace RecipeList.Model
             return recipes; 
         }
 
+        public bool DeleteRecipe(int id)
+        {
+            _conn.Open();
+
+            string query = $"DELETE FROM recipes WHERE id = {id};";
+
+            var cmd = new MySqlCommand(query, _conn);
+
+            var affectedRows = cmd.ExecuteNonQuery();
+
+            if(affectedRows < 1)
+            {
+                _conn.Close();
+                return false;
+            }
+
+            _conn.Close();
+            return true;
+        }
+
         private List<string> ParseJson(string json, string key)
         {
             Object[] temps = (object[])JsonParser.Parse(json)[key];
