@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,18 @@ namespace RecipeList.View
             procedureView1.SetDescription(recipe.Description);
             procedureView1.SetIngredients(recipe.Ingredients);
             procedureView1.SetProcedure(recipe.Procedures);
+
+            Image image = ByteArrayToImage(recipe.Image);
+            procedureView1.SetImage(image);
+        }
+
+        private Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            using (MemoryStream ms = new MemoryStream(byteArrayIn))
+            {
+                Image image = Image.FromStream(ms);
+                return image;
+            }
         }
     }
 }

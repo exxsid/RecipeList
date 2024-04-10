@@ -49,6 +49,7 @@
             this.procedurePhoto.Location = new System.Drawing.Point(14, 14);
             this.procedurePhoto.Name = "procedurePhoto";
             this.procedurePhoto.Size = new System.Drawing.Size(214, 200);
+            this.procedurePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.procedurePhoto.TabIndex = 0;
             this.procedurePhoto.TabStop = false;
             // 

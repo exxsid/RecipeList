@@ -48,14 +48,5 @@ namespace RecipeList
             ListButton.BackColor = Color.AliceBlue;
         }
 
-        private void panel3_MouseClick(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show("Clicked");
-        }
-
-        private void tableLayoutPanel1_MouseClick(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show("Clicked1");
-        }
     }
 }

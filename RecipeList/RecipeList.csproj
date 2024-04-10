@@ -72,6 +72,7 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
     </Reference>
@@ -155,6 +156,12 @@
     <Compile Include="View\ProcedureView.Designer.cs">
       <DependentUpon>ProcedureView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\RecipeformForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RecipeformForm.Designer.cs">
+      <DependentUpon>RecipeformForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\RecipesView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -190,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ProcedureView.resx">
       <DependentUpon>ProcedureView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RecipeformForm.resx">
+      <DependentUpon>RecipeformForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\RecipesView.resx">
       <DependentUpon>RecipesView.cs</DependentUpon>

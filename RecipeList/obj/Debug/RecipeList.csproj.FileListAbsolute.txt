@@ -38,14 +38,15 @@ C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.csproj.Sug
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.MainForm.resources
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.Properties.Resources.resources
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.View.CategoriesView.resources
+C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.View.CategoryRecipesView.resources
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.View.Component.CategoryCard.resources
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.View.Component.RecipeCard.resources
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.View.ProcedureForm.resources
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.View.ProcedureView.resources
+C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.View.RecipeformForm.resources
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.View.RecipesView.resources
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.csproj.GenerateResource.cache
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.csproj.CoreCompileInputs.cache
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.csproj.CopyComplete
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.exe
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.pdb
-C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.View.CategoryRecipesView.resources

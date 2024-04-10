@@ -46,6 +46,7 @@
             this.AddRecipeBtn.TabIndex = 1;
             this.AddRecipeBtn.Text = "Add Recipe";
             this.AddRecipeBtn.UseVisualStyleBackColor = false;
+            this.AddRecipeBtn.Click += new System.EventHandler(this.AddRecipeBtn_Click);
             // 
             // recipeFlowLayout
             // 

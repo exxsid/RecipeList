@@ -1,11 +1,13 @@
 ﻿using MySql.Data.MySqlClient;
 using MySqlX.Serialization;
+using Org.BouncyCastle.Utilities;
 using RecipeList.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace RecipeList.Model
 {
@@ -66,6 +68,62 @@ namespace RecipeList.Model
             _conn.Close();
 
             return obj;
+        }
+
+        public bool PostRecipe(Recipe recipe)
+        {
+            _conn.Open();
+
+            string proceduresText = "{\"procedures\":[";
+            for (int i = 0; i < recipe.Procedures.Count - 1; i++)
+            {
+                proceduresText += $"\"{recipe.Procedures[i].Trim()}\",";
+            }
+            proceduresText += "\"" + recipe.Procedures[recipe.Procedures.Count - 1].Trim() + "\"]}";
+
+
+            string ingredientsText = "{\"ingredients\":[";
+            for (int i = 0; i < recipe.Ingredients.Count - 1; i++)
+            {
+                ingredientsText += $"\"{recipe.Ingredients[i].Trim()}\",";
+            }
+            ingredientsText += "\"" + recipe.Ingredients[recipe.Ingredients.Count - 1].Trim() + "\"]}";
+
+            string query = $"INSERT INTO recipes (`name`, `description`, `ingredients`, `procedures`, `image`, `category_id`) VALUES " +
+                    $"(@name, @description, @ingredients, @procedures, @image, @category)";
+
+            var cmd = new MySqlCommand(query, _conn);
+
+            var nameParam = new MySqlParameter("@name", MySqlDbType.String);
+            var descParam = new MySqlParameter("@description", MySqlDbType.Text);
+            var ingrParam = new MySqlParameter("@ingredients", MySqlDbType.JSON);
+            var prodParam = new MySqlParameter("@procedures", MySqlDbType.JSON);
+            var imgParam = new MySqlParameter("@image", MySqlDbType.Blob, recipe.Image.Length);
+            var catParam = new MySqlParameter("@category", MySqlDbType.Int32);
+
+            nameParam.Value = recipe.Name;
+            descParam.Value = recipe.Description;
+            ingrParam.Value = ingredientsText;
+            prodParam.Value = proceduresText;
+            imgParam.Value = recipe.Image;
+            catParam.Value = recipe.Category;
+
+            cmd.Parameters.Add(nameParam);
+            cmd.Parameters.Add(descParam);
+            cmd.Parameters.Add(ingrParam);
+            cmd.Parameters.Add(prodParam);
+            cmd.Parameters.Add(imgParam);
+            cmd.Parameters.Add(catParam);
+
+            var affectedRows = cmd.ExecuteNonQuery();
+
+            if(affectedRows < 1)
+            {
+                _conn.Close();
+                return false;
+            }
+            _conn.Close();
+            return true;
         }
 
         public List<Recipe> GetRecipeByCategory(string category)

@@ -67,5 +67,11 @@ namespace RecipeList.View
         {
             GenerateRecipeCard();
         }
+
+        private void AddRecipeBtn_Click(object sender, EventArgs e)
+        {
+            RecipeformForm obj = new RecipeformForm();
+            obj.Show();
+        }
     }
 }

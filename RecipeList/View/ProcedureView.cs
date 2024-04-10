@@ -54,5 +54,10 @@ namespace RecipeList.View
             this.procedures.Text = text;
         }
 
+        public void SetImage(Image image)
+        {
+            this.procedurePhoto.Image = image;
+        }
+
     }
 }
