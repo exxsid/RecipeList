@@ -59,5 +59,10 @@ namespace RecipeList.View
         {
             GenerateCategoryCard();
         }
+
+        public void CategoriesViewReload()
+        {
+            GenerateCategoryCard();
+        }
     }
 }

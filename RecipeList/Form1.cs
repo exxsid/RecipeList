@@ -21,12 +21,14 @@ namespace RecipeList
 
         private void ListButton_Click(object sender, EventArgs e)
         {
+            recipesView.RecioeVewReload();
             panel1.Show();
             panel2.Hide();
         }
 
         private void CategoryBtn_Click(object sender, EventArgs e)
         {
+            categoriesView1.CategoriesViewReload();
             panel2.Show();
             panel1.Hide();
         }
