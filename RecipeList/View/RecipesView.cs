@@ -66,7 +66,6 @@ namespace RecipeList.View
         private void RecipesView_Load(object sender, EventArgs e)
         {
             GenerateRecipeCard();
-            MessageBox.Show("Recipe loaded");
         }
 
         public void RecioeVewReload()
@@ -77,6 +76,7 @@ namespace RecipeList.View
         private void AddRecipeBtn_Click(object sender, EventArgs e)
         {
             RecipeformForm obj = new RecipeformForm();
+            obj.Text = "Add";
             obj.Show();
         }
     }

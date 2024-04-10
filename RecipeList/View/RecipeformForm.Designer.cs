@@ -115,6 +115,7 @@
             this.descriptionTextBox.Location = new System.Drawing.Point(131, 71);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.descriptionTextBox.Size = new System.Drawing.Size(209, 67);
             this.descriptionTextBox.TabIndex = 5;
             this.descriptionTextBox.TabStop = false;
@@ -137,6 +138,7 @@
             this.ingerdientsTextBox.Location = new System.Drawing.Point(131, 179);
             this.ingerdientsTextBox.Multiline = true;
             this.ingerdientsTextBox.Name = "ingerdientsTextBox";
+            this.ingerdientsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.ingerdientsTextBox.Size = new System.Drawing.Size(209, 78);
             this.ingerdientsTextBox.TabIndex = 7;
             this.ingerdientsTextBox.TabStop = false;
@@ -159,6 +161,7 @@
             this.proceduresTextBox.Location = new System.Drawing.Point(131, 263);
             this.proceduresTextBox.Multiline = true;
             this.proceduresTextBox.Name = "proceduresTextBox";
+            this.proceduresTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.proceduresTextBox.Size = new System.Drawing.Size(209, 78);
             this.proceduresTextBox.TabIndex = 9;
             this.proceduresTextBox.TabStop = false;

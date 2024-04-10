@@ -126,6 +126,119 @@ namespace RecipeList.Model
             return true;
         }
 
+        public bool EditRecipe(Recipe recipe)
+        {
+            _conn.Open();
+
+            string proceduresText = "{\"procedures\":[";
+            for (int i = 0; i < recipe.Procedures.Count - 1; i++)
+            {
+                proceduresText += $"\"{recipe.Procedures[i].Trim()}\",";
+            }
+            proceduresText += "\"" + recipe.Procedures[recipe.Procedures.Count - 1].Trim() + "\"]}";
+
+
+            string ingredientsText = "{\"ingredients\":[";
+            for (int i = 0; i < recipe.Ingredients.Count - 1; i++)
+            {
+                ingredientsText += $"\"{recipe.Ingredients[i].Trim()}\",";
+            }
+            ingredientsText += "\"" + recipe.Ingredients[recipe.Ingredients.Count - 1].Trim() + "\"]}";
+
+            #region code block if the image is not edited
+            if (recipe.Image.Length == 1)
+            {
+                string query1 = "UPDATE recipes SET " +
+                "name = @name, " +
+                "description = @description, " +
+                "ingredients = @ingredients, " +
+                "procedures = @procedures, " +
+                "category_id = @category " +
+                "WHERE id = @id;";
+
+                var cmd1 = new MySqlCommand(query1, _conn);
+
+                var idParam1 = new MySqlParameter("@id", MySqlDbType.Int32);
+                var nameParam1 = new MySqlParameter("@name", MySqlDbType.String);
+                var descParam1 = new MySqlParameter("@description", MySqlDbType.Text);
+                var ingrParam1 = new MySqlParameter("@ingredients", MySqlDbType.JSON);
+                var prodParam1 = new MySqlParameter("@procedures", MySqlDbType.JSON);
+                var catParam1 = new MySqlParameter("@category", MySqlDbType.Int32);
+
+                idParam1.Value = recipe.Id;
+                nameParam1.Value = recipe.Name;
+                descParam1.Value = recipe.Description;
+                ingrParam1.Value = ingredientsText;
+                prodParam1.Value = proceduresText;
+                catParam1.Value = recipe.Category;
+
+                cmd1.Parameters.Add(idParam1);
+                cmd1.Parameters.Add(nameParam1);
+                cmd1.Parameters.Add(descParam1);
+                cmd1.Parameters.Add(ingrParam1);
+                cmd1.Parameters.Add(prodParam1);
+                cmd1.Parameters.Add(catParam1);
+
+                MessageBox.Show(cmd1.CommandText);
+
+                var affectedRows1 = cmd1.ExecuteNonQuery();
+
+                if (affectedRows1 < 1)
+                {
+                    _conn.Close();
+                    return false;
+                }
+                _conn.Close();
+                return true;
+            }
+            #endregion
+
+            string query = "UPDATE recipes SET " +
+                "name = @name, " +
+                "description = @description, " +
+                "ingredients = @ingredients, " +
+                "procedures = @procedures, " +
+                "image = @image, " +
+                "category_id = @category " +
+                "WHERE id = @id;";
+
+            var cmd = new MySqlCommand(query, _conn);
+
+            var idParam = new MySqlParameter("@id", MySqlDbType.Int32);
+            var nameParam = new MySqlParameter("@name", MySqlDbType.String);
+            var descParam = new MySqlParameter("@description", MySqlDbType.Text);
+            var ingrParam = new MySqlParameter("@ingredients", MySqlDbType.JSON);
+            var prodParam = new MySqlParameter("@procedures", MySqlDbType.JSON);
+            var imgParam = new MySqlParameter("@image", MySqlDbType.Blob, recipe.Image.Length);
+            var catParam = new MySqlParameter("@category", MySqlDbType.Int32);
+
+            idParam.Value = recipe.Id;
+            nameParam.Value = recipe.Name;
+            descParam.Value = recipe.Description;
+            ingrParam.Value = ingredientsText;
+            prodParam.Value = proceduresText;
+            imgParam.Value = recipe.Image;
+            catParam.Value = recipe.Category;
+
+            cmd.Parameters.Add(idParam);
+            cmd.Parameters.Add(nameParam);
+            cmd.Parameters.Add(descParam);
+            cmd.Parameters.Add(ingrParam);
+            cmd.Parameters.Add(prodParam);
+            cmd.Parameters.Add(imgParam);
+            cmd.Parameters.Add(catParam);
+
+            var affectedRows = cmd.ExecuteNonQuery();
+
+            if (affectedRows < 1)
+            {
+                _conn.Close();
+                return false;
+            }
+            _conn.Close();
+            return true;
+        }
+
         public List<Recipe> GetRecipeByCategory(string category)
         {
             List<Recipe> recipes = new List<Recipe>();

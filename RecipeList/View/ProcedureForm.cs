@@ -33,6 +33,7 @@ namespace RecipeList.View
             procedureView1.SetDescription(recipe.Description);
             procedureView1.SetIngredients(recipe.Ingredients);
             procedureView1.SetProcedure(recipe.Procedures);
+            procedureView1.Id = this.Id;
 
             Image image = ByteArrayToImage(recipe.Image);
             procedureView1.SetImage(image);
