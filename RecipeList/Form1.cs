@@ -50,5 +50,19 @@ namespace RecipeList
             ListButton.BackColor = Color.AliceBlue;
         }
 
+        private void MainForm_Enter(object sender, EventArgs e)
+        {
+            categoriesView1.CategoriesViewReload();
+        }
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            //MainForm obj = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+            //if (obj != null)
+            //{
+            //}
+            recipesView.RecioeVewReload();
+
+        }
     }
 }

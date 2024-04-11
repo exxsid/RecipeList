@@ -138,6 +138,12 @@
     <Compile Include="View\Component\CategoryCard.Designer.cs">
       <DependentUpon>CategoryCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Component\DeleteDialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Component\DeleteDialogBox.Designer.cs">
+      <DependentUpon>DeleteDialogBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Component\RecipeCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Component\CategoryCard.resx">
       <DependentUpon>CategoryCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Component\DeleteDialogBox.resx">
+      <DependentUpon>DeleteDialogBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Component\RecipeCard.resx">
       <DependentUpon>RecipeCard.cs</DependentUpon>

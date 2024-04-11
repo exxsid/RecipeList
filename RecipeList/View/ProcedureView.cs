@@ -1,4 +1,5 @@
 ﻿using RecipeList.Model;
+using RecipeList.View.Component;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -77,19 +78,8 @@ namespace RecipeList.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show($"Are you sure you want to delete {name.Text}?",
-                "Delete", MessageBoxButtons.OKCancel);
-            if (result == DialogResult.OK)
-            {
-                RecipeDAO obj = new RecipeDAO();
-                bool res = obj.DeleteRecipe((int)this.Id);
-                if (res)
-                {
-                    MessageBox.Show("Deleted successfully");
-                    return;
-                }
-                MessageBox.Show("Deletion failed");
-            }
+            DeleteDialogBox deleteDialogBox = new DeleteDialogBox(this.Id);
+            deleteDialogBox.Show();
         }
     }
 }

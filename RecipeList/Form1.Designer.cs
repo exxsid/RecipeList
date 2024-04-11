@@ -34,8 +34,8 @@
             this.ListButton = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.recipesView = new RecipeList.View.RecipesView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.recipesView = new RecipeList.View.RecipesView();
             this.categoriesView1 = new RecipeList.View.CategoriesView();
             this.NavigationPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
@@ -111,6 +111,15 @@
             this.panel1.Size = new System.Drawing.Size(883, 454);
             this.panel1.TabIndex = 1;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(246)))), ((int)(((byte)(244)))));
+            this.panel2.Controls.Add(this.categoriesView1);
+            this.panel2.Location = new System.Drawing.Point(1, 53);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(880, 454);
+            this.panel2.TabIndex = 1;
+            // 
             // recipesView
             // 
             this.recipesView.AutoScroll = true;
@@ -123,15 +132,6 @@
             this.recipesView.Padding = new System.Windows.Forms.Padding(10);
             this.recipesView.Size = new System.Drawing.Size(883, 454);
             this.recipesView.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(246)))), ((int)(((byte)(244)))));
-            this.panel2.Controls.Add(this.categoriesView1);
-            this.panel2.Location = new System.Drawing.Point(1, 53);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(880, 454);
-            this.panel2.TabIndex = 1;
             // 
             // categoriesView1
             // 
@@ -159,7 +159,9 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recipe List";
+            this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Enter += new System.EventHandler(this.MainForm_Enter);
             this.NavigationPanel.ResumeLayout(false);
             this.NavigationPanel.PerformLayout();
             this.MenuPanel.ResumeLayout(false);
