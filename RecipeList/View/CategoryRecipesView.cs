@@ -72,5 +72,10 @@ namespace RecipeList.View
                 return image;
             }
         }
+
+        private void CategoryRecipesView_Activated(object sender, EventArgs e)
+        {
+            GenerateRecipeCard();
+        }
     }
 }

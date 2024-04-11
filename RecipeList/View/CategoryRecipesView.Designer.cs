@@ -49,6 +49,7 @@
             this.ClientSize = new System.Drawing.Size(498, 327);
             this.Controls.Add(this.categoryRecipeFlowLayout);
             this.Name = "CategoryRecipesView";
+            this.Activated += new System.EventHandler(this.CategoryRecipesView_Activated);
             this.Load += new System.EventHandler(this.CategoryRecipesView_Load);
             this.ResumeLayout(false);
 

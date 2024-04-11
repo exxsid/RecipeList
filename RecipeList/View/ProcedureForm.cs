@@ -1,4 +1,5 @@
-﻿using RecipeList.Model;
+﻿using MySql.Data.MySqlClient;
+using RecipeList.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,17 +51,24 @@ namespace RecipeList.View
 
         private void ProcedureForm_Activated(object sender, EventArgs e)
         {
-            Recipe recipe = recipeDAO.GetRecipeById(Id);
+            try
+            {
+                Recipe recipe = recipeDAO.GetRecipeById(Id);
 
-            procedureView1.SetName(recipe.Name);
-            procedureView1.SetCategory(recipe.Category);
-            procedureView1.SetDescription(recipe.Description);
-            procedureView1.SetIngredients(recipe.Ingredients);
-            procedureView1.SetProcedure(recipe.Procedures);
-            procedureView1.Id = this.Id;
+                procedureView1.SetName(recipe.Name);
+                procedureView1.SetCategory(recipe.Category);
+                procedureView1.SetDescription(recipe.Description);
+                procedureView1.SetIngredients(recipe.Ingredients);
+                procedureView1.SetProcedure(recipe.Procedures);
+                procedureView1.Id = this.Id;
 
-            Image image = ByteArrayToImage(recipe.Image);
-            procedureView1.SetImage(image);
+                Image image = ByteArrayToImage(recipe.Image);
+                procedureView1.SetImage(image);
+            } catch (MySqlException)
+            {
+                this.Close();
+            }
+            
         }
     }
 }
