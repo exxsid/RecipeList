@@ -73,7 +73,7 @@ namespace RecipeList.View
             form.SetProcedures(procedures.Text);
             form.Text = "Edit";
             form.Tag = this.Id;
-            form.ShowDialog();
+            form.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

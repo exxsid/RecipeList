@@ -52,13 +52,13 @@ namespace RecipeList.View
 
         public void SetIngridients(string ingr)
         {
-            string temp = ingr.Replace("- ", "");
+            string temp = ingr.Trim().Replace("- ", "");
             this.ingerdientsTextBox.Text = temp;
         }
 
         public void SetProcedures(string prod)
         {
-            string temp = prod.Replace("- ", "");
+            string temp = prod.Trim().Replace("- ", "");
             this.proceduresTextBox.Text = temp;
         }
 
@@ -137,13 +137,13 @@ namespace RecipeList.View
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(this, ex.Message);
             }
             catch (Exception)
             {
-                MessageBox.Show("Fill all forms");
+                MessageBox.Show(this, "Fill all forms");
             }
-            this.Close();
+            
         }
 
         private void EditRecipe()
@@ -197,11 +197,11 @@ namespace RecipeList.View
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(this, ex.Message);
             }
             catch (Exception)
             {
-                MessageBox.Show("Fill all forms");
+                MessageBox.Show(this, "Fill all forms");
             }
             this.Close();
         }
