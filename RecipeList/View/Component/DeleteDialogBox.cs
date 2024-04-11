@@ -40,6 +40,7 @@ namespace RecipeList.View.Component
             if (res)
             {
                 MessageBox.Show("Deleted successfully");
+                this.Close();
                 return;
             }
             MessageBox.Show("Deletion failed");
