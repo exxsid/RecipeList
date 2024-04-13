@@ -40,7 +40,7 @@
             this.procedureView1.Id = 0;
             this.procedureView1.Location = new System.Drawing.Point(0, -1);
             this.procedureView1.Name = "procedureView1";
-            this.procedureView1.Size = new System.Drawing.Size(747, 762);
+            this.procedureView1.Size = new System.Drawing.Size(730, 762);
             this.procedureView1.TabIndex = 0;
             // 
             // ProcedureForm
