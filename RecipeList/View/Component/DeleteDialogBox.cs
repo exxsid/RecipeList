@@ -25,12 +25,12 @@ namespace RecipeList.View.Component
         {
             if (string.IsNullOrEmpty(passwordTextBox.Text.Trim()))
             {
-                MessageBox.Show("Fill out the password");
+                MessageBox.Show(this, "Fill out the password");
                 return;
             }
             if (!passwordTextBox.Text.Trim().Equals("password"))
             {
-                MessageBox.Show("Wrong password");
+                MessageBox.Show(this, "Wrong password");
                 passwordTextBox.Clear();
                 return;
             }
@@ -39,7 +39,7 @@ namespace RecipeList.View.Component
             bool res = obj.DeleteRecipe(this.id);
             if (res)
             {
-                MessageBox.Show("Deleted successfully");
+                MessageBox.Show(this, "Deleted successfully");
                 this.Close();
                 return;
             }
