@@ -209,8 +209,6 @@ namespace RecipeList.Model
                 cmd1.Parameters.Add(prodParam1);
                 cmd1.Parameters.Add(catParam1);
 
-                MessageBox.Show(cmd1.CommandText);
-
                 var affectedRows1 = cmd1.ExecuteNonQuery();
 
                 if (affectedRows1 < 1)
