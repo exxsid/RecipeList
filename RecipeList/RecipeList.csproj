@@ -132,6 +132,12 @@
     <Compile Include="View\CategoryRecipesView.Designer.cs">
       <DependentUpon>CategoryRecipesView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Component\AddRecipeDialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Component\AddRecipeDialogBox.Designer.cs">
+      <DependentUpon>AddRecipeDialogBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Component\CategoryCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\CategoryRecipesView.resx">
       <DependentUpon>CategoryRecipesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Component\AddRecipeDialogBox.resx">
+      <DependentUpon>AddRecipeDialogBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Component\CategoryCard.resx">
       <DependentUpon>CategoryCard.cs</DependentUpon>

@@ -75,6 +75,12 @@ namespace RecipeList.View
 
         private void AddRecipeBtn_Click(object sender, EventArgs e)
         {
+            AddRecipeDialogBox addRecipeDialogBox = new AddRecipeDialogBox();
+            addRecipeDialogBox.ShowDialog();
+            if (!addRecipeDialogBox.DialogResult)
+            {
+                return;
+            }
             RecipeformForm obj = new RecipeformForm();
             obj.Text = "Add";
             obj.Show();
