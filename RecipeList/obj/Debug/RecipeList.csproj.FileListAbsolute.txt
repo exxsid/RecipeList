@@ -51,3 +51,4 @@ C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.csproj.Cop
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.exe
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.pdb
 C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.View.Component.DeleteDialogBox.resources
+C:\Users\Asus\source\repos\RecipeList\RecipeList\obj\Debug\RecipeList.View.Component.EditDialogBox.resources

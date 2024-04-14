@@ -65,6 +65,12 @@ namespace RecipeList.View
 
         private void editBtn_Click(object sender, EventArgs e)
         {
+            EditDialogBox editDialog = new EditDialogBox();
+            editDialog.ShowDialog();
+            if (!editDialog.DialogResult)
+            {
+                return;
+            }
             RecipeformForm form = new RecipeformForm();
             form.SetName(name.Text);
             form.SetCategory(category.Text);
