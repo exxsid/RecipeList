@@ -70,6 +70,36 @@ namespace RecipeList.Model
             return obj;
         }
 
+        public List<Recipe> GetRecipeByString (string str)
+        {
+            List<Recipe> result = new List<Recipe>();
+
+            _conn.Open();
+
+            string query = $"SELECT * FROM recipes r JOIN categories c ON r.category_id = c.id  WHERE r.name LIKE \'%{str}%\';";
+
+            var cmd = new MySqlCommand(query, _conn);
+            var reader = cmd.ExecuteReader();
+            
+
+            while (reader.Read())
+            {
+                Recipe obj = new Recipe();
+                obj.Id = reader.GetInt32(0);
+                obj.Name = reader.GetString(1);
+                obj.Description = reader.GetString(2);
+                obj.Ingredients = ParseJson(reader.GetString(3), "ingredients");
+                obj.Procedures = ParseJson(reader.GetString(4), "procedures");
+                obj.Image = reader.IsDBNull(reader.GetOrdinal("image")) ? null : (byte[])reader["image"];
+                obj.Category = reader.GetString(8);
+                result.Add(obj);
+            }
+
+            _conn.Close();
+
+            return result;
+        }
+
         public bool PostRecipe(Recipe recipe)
         {
             _conn.Open();

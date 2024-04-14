@@ -35,12 +35,17 @@
             this.Title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.searchFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.recipesView = new RecipeList.View.RecipesView();
             this.categoriesView1 = new RecipeList.View.CategoriesView();
             this.NavigationPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // NavigationPanel
@@ -48,6 +53,8 @@
             this.NavigationPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.NavigationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.NavigationPanel.Controls.Add(this.searchBtn);
+            this.NavigationPanel.Controls.Add(this.searchTextBox);
             this.NavigationPanel.Controls.Add(this.MenuPanel);
             this.NavigationPanel.Controls.Add(this.Title);
             this.NavigationPanel.Location = new System.Drawing.Point(1, 0);
@@ -61,7 +68,7 @@
             this.MenuPanel.AutoSize = true;
             this.MenuPanel.Controls.Add(this.CategoryBtn);
             this.MenuPanel.Controls.Add(this.ListButton);
-            this.MenuPanel.Location = new System.Drawing.Point(289, 3);
+            this.MenuPanel.Location = new System.Drawing.Point(197, 3);
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(304, 44);
             this.MenuPanel.TabIndex = 2;
@@ -120,6 +127,45 @@
             this.panel2.Size = new System.Drawing.Size(880, 454);
             this.panel2.TabIndex = 1;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.searchFlowLayoutPanel);
+            this.panel3.Location = new System.Drawing.Point(4, 53);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(880, 454);
+            this.panel3.TabIndex = 1;
+            // 
+            // searchFlowLayoutPanel
+            // 
+            this.searchFlowLayoutPanel.AutoScroll = true;
+            this.searchFlowLayoutPanel.Location = new System.Drawing.Point(34, 22);
+            this.searchFlowLayoutPanel.Name = "searchFlowLayoutPanel";
+            this.searchFlowLayoutPanel.Size = new System.Drawing.Size(813, 404);
+            this.searchFlowLayoutPanel.TabIndex = 0;
+            // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Font = new System.Drawing.Font("JetBrainsMono NF", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTextBox.Location = new System.Drawing.Point(576, 15);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(193, 25);
+            this.searchTextBox.TabIndex = 3;
+            this.searchTextBox.TabStop = false;
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.BackColor = System.Drawing.Color.White;
+            this.searchBtn.FlatAppearance.BorderSize = 0;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.Font = new System.Drawing.Font("JetBrainsMono NF", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.Location = new System.Drawing.Point(775, 16);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(75, 23);
+            this.searchBtn.TabIndex = 4;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
             // recipesView
             // 
             this.recipesView.AutoScroll = true;
@@ -151,6 +197,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(246)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(884, 511);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.NavigationPanel);
@@ -169,6 +216,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -184,6 +232,10 @@
         private View.RecipesView recipesView;
         private System.Windows.Forms.Panel panel2;
         private View.CategoriesView categoriesView1;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.FlowLayoutPanel searchFlowLayoutPanel;
     }
 }
 
